@@ -1,6 +1,7 @@
 {
-  "name": "vue-project",
+  "name": "timeline_client",
   "version": "0.0.0",
+  "description": "",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

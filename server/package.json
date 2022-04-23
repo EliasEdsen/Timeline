@@ -1,0 +1,24 @@
+{
+  "name": "timeline_server",
+  "version": "0.0.0",
+  "description": "",
+  "main": "timeline.js",
+  "scripts": {
+    "start": "pm2 start     ./src/timeline.js",
+    "restart": "pm2 restart ./src/timeline.js",
+    "stop": "pm2 stop       ./src/timeline.js",
+    "delete": "pm2 delete   ./src/timeline.js",
+    "development": "nodemon ./src/timeline.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "async": "^3.2.3",
+    "lodash": "^4.17.21",
+    "pg": "^8.7.3",
+    "redis": "^4.0.6"
+  }
+}
