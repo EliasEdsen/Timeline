@@ -2,6 +2,8 @@
   <div>
     <h1>Test page</h1>
 
+    <button @click=test()>Enlarge text</button>
+
     <Post
       v-for="post in posts"
       :key="post.id"
@@ -19,8 +21,9 @@
 
   export default {
     components: {
-      Post
+      Post: Post
     },
+    emits: ['posts'],
     data() {
       return {
         posts: [
@@ -40,6 +43,10 @@
           timestamp: "2022-04-21 18:59:01"
         }]
       }
+    },
+
+    methods: {
+      test() { window.serverCall({aaa: 'bbb'}, 'GET', '/posts/post?tags=aa,bb,cc&user=dd', (response) => {console.log(response);}) }
     }
   }
 </script>

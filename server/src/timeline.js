@@ -47,8 +47,16 @@ if (cluster.isMaster) {
 
     app.route('*')
       .all((req, res) => {
-        let data = {hello: 'world'}
-        res.status(200).header('Access-Control-Allow-Origin', req.headers.origin).header('Access-Control-Allow-Credentials', true).send(JSON.stringify(data));
+        let url_data = req.url.split('?')
+        let url  = url_data[0];
+        let _data = url_data[1] || '';
+        let data = {};
+        _data.split('&').forEach((value) => { let spl = value.split('='); data[spl[0]] = spl[1]; })
+
+        console.log(url, data);
+
+        let resp = {hello: 'world'}
+        res.status(200).header('Access-Control-Allow-Origin', req.headers.origin).header('Access-Control-Allow-Credentials', true).send(JSON.stringify(resp));
         // return RequestHandlerManager.regular(req, res);
       });
   });
