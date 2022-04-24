@@ -47,15 +47,21 @@ if (cluster.isMaster) {
 
     app.route('*')
       .all((req, res) => {
-        let url_data = req.url.split('?')
-        let url  = url_data[0];
-        let _data = url_data[1] || '';
-        let data = {};
-        _data.split('&').forEach((value) => { let spl = value.split('='); data[spl[0]] = spl[1]; })
-
-        console.log(url, data);
-
-        let resp = {hello: 'world'}
+        let resp = {posts: [{
+          id: 2,
+          title: "Title2",
+          decription: "Decription2",
+          image: "https://icons-for-free.com/iconfiles/png/512/inode+directory-1329319930127274200.png",
+          tags: ["#post", "#post2"],
+          timestamp: "2022-04-22 18:59:01"
+        }, {
+          id: 1,
+          title: "Title1",
+          decription: "Decription1",
+          image: "https://icons-for-free.com/iconfiles/png/512/inode+directory-1329319930127274200.png",
+          tags: ["#post", "#post1"],
+          timestamp: "2022-04-21 18:59:01"
+        }]}
         res.status(200).header('Access-Control-Allow-Origin', req.headers.origin).header('Access-Control-Allow-Credentials', true).send(JSON.stringify(resp));
         // return RequestHandlerManager.regular(req, res);
       });

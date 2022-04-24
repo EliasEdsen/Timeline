@@ -23,30 +23,15 @@
     components: {
       Post: Post
     },
-    emits: ['posts'],
+    // emits: ['posts'],
     data() {
       return {
-        posts: [
-        {
-          id: 2,
-          title: "Title2",
-          decription: "Decription2",
-          image: "https://icons-for-free.com/iconfiles/png/512/inode+directory-1329319930127274200.png",
-          tags: ["#post", "#post2"],
-          timestamp: "2022-04-22 18:59:01"
-        }, {
-          id: 1,
-          title: "Title1",
-          decription: "Decription1",
-          image: "https://icons-for-free.com/iconfiles/png/512/inode+directory-1329319930127274200.png",
-          tags: ["#post", "#post1"],
-          timestamp: "2022-04-21 18:59:01"
-        }]
+        posts: []
       }
     },
 
     methods: {
-      test() { window.serverCall({aaa: 'bbb'}, 'GET', '/posts/post?tags=aa,bb,cc&user=dd', (response) => {console.log(response);}) }
+      test() { window.serverCall({aaa: 'bbb'}, 'GET', '/posts/post?tags=aa,bb,cc&user=dd', (response) => { this.posts = response.posts; }) }
     }
   }
 </script>
