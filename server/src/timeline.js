@@ -53,14 +53,16 @@ if (cluster.isMaster) {
           decription: "Decription2",
           image: "https://icons-for-free.com/iconfiles/png/512/inode+directory-1329319930127274200.png",
           tags: ["#post", "#post2"],
-          timestamp: "2022-04-22 18:59:01"
+          timestamp: "2022-04-22 18:59:01",
+          link: "https://google.com/"
         }, {
           id: 1,
           title: "Title1",
           decription: "Decription1",
           image: "https://icons-for-free.com/iconfiles/png/512/inode+directory-1329319930127274200.png",
           tags: ["#post", "#post1"],
-          timestamp: "2022-04-21 18:59:01"
+          timestamp: "2022-04-21 18:59:01",
+          link: "https://google.com/"
         }]}
         res.status(200).header('Access-Control-Allow-Origin', req.headers.origin).header('Access-Control-Allow-Credentials', true).send(JSON.stringify(resp));
         // return RequestHandlerManager.regular(req, res);

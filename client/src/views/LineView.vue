@@ -12,6 +12,7 @@
       :image="post.image"
       :tags="post.tags"
       :timestamp="post.timestamp"
+      :link="post.link"
     ></Post>
   </div>
 </template>
